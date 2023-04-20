@@ -2,7 +2,9 @@
 
 Projet réaliser dans le cadre des cours de développement web de L1 Mathématiques à l'université de Tours.
 
-L'éxecution se fait par l'insertion de ce projet dans le dossier htdocs d'un serveur Apache et la connexion à ce-dernier
+Il vous faut un serveur Apache et SQL.\
+Sur le serveur SQL, créez une base de données, executez y "spouts_gambling.sql", et renseignez les informations dans "/ressources/fonctions/info_base_donnee.php".\
+L'execution se fait par l'insertion de ce projet dans le dossier htdocs d'un serveur Apache et la connexion à ce-dernier.
 
 ---
 Participants:
@@ -34,6 +36,8 @@ Pour modifier les informations de la base de données, vous pous pouvez accéder
 Note:
 ---
 Le site a été développer sous Google Chrome et sur des écrans d'ordinateurs 16:9 principalement, même s'il est responsive, quelques problèmes peuvent survenir lors d'un changement de taille d'écran ou du visionnage sur un trop petit écran, ainsi que des problèmes liés au navigateur.
+
+Pour rendre un premier utilisateur administrateur, vous devrez passer par la base de données et modifier le booléen de la colonne user_admin.
 
 Le site fonctionne avec des séries de "include", tous partants du fichier "index.php" dans le dossier principal
 - Le fichier "index.php" est donc présenté avec du html correcte, là où les autres fichiers ne sont que des insertions de code dans ce premier.

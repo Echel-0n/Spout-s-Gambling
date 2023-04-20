@@ -1,0 +1,169 @@
+.contenu_droite {
+    display: grid;
+    grid-template-columns: auto 0;
+    width: 100%;
+    max-width: 100%;
+    min-height: 200px;
+    user-select: none;
+}
+
+.contenu_centre {
+    height: 100%;
+    width: 100%;
+    transition: margin-left 1s, width 1s;
+}
+
+@media (min-width: 849px) {
+    .bg_deployer .contenu_centre {
+        margin-left: 300px;
+        transition: margin-left 0.5s, width 0.5s;
+        width: calc(100% - 300px);
+    }
+}
+
+@media (max-width: 849px) {
+    .contenu_droite {
+        visibility: visible;
+    }
+    .bg_deployer .contenu_droite {
+        visibility: hidden;
+    }
+}
+
+.rech_jeux {
+    height: 100%;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    display: grid;
+    grid-template-rows: min-content auto;
+}
+
+.droite_relative_content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.droite_part_content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: block;
+    margin: 5px;
+    padding: 15px;
+    user-select: none;
+    max-height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.jeux_img_fichier {
+    width: 100%;
+}
+
+.jeux_pres_content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.jeux_pres_titre {
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    right: 5%;
+    left: 5%;
+    z-index: 1;
+}
+
+.jeux_pres_img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: transform 250ms;
+}
+
+.grille_jeux .jeux_pres_content:hover .jeux_pres_titre,
+.car_centre .jeux_pres_content:hover .jeux_pres_titre {
+    text-decoration: underline;
+}
+
+.grille_jeux .jeux_pres_content:hover .jeux_pres_img,
+.car_centre .jeux_pres_content:hover .jeux_pres_img {
+    transform: scale(1.2);
+}
+
+
+/* Adaptation pour grille */
+
+.droite_part_content.grille_jeux {
+    display: grid;
+    /* grid-template-columns: VOIR JS "afficher_plus.js" ;*/
+    grid-auto-rows: max-content;
+}
+
+.jeux_grille_case {
+    padding: 5px;
+}
+
+.jeux_grille_relative {
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+.jeux_grille_absolute {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.grille_jeux .jeux_pres_content {
+    height: calc(100% - 2 * 2px);
+    width: calc(100% - 2 * 2px);
+    border: 2px solid;
+}
+
+
+/* Adaptation carousel vertical */
+
+.vertical .jeux_pres_titre {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    right: 5%;
+    left: 5%;
+    z-index: 1;
+}
+
+.vertical .car_droite .jeux_pres_titre,
+.vertical .car_droite_droite .jeux_pres_titre {
+    display: flex;
+    position: absolute;
+    top: 65%;
+    bottom: 0;
+    right: 5%;
+    left: 5%;
+    z-index: 1;
+    vertical-align: bottom;
+}
+
+
+/* Préparation recherche jeux */
+
+.droite_part_content.droite_part_noresult {
+    visibility: hidden;
+    text-align: center;
+}

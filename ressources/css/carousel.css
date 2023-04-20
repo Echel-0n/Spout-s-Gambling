@@ -1,0 +1,438 @@
+.cont_carousel {
+    height: 100%;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.ratio_keeper {
+    margin: auto 12.5px;
+    width: calc(100% - 2*12.5px);
+    height: 0;
+    padding-bottom: calc( 22.5% + 2*2*8pt);
+    position: relative;
+}
+
+.vertical .ratio_keeper {
+    margin: auto auto;
+    height: calc(100% - 2*12.5px);
+    padding-bottom: 0;
+}
+
+.carousel_jeux {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: 100%;
+    transform: translate(-2pt, 0);
+    user-select: none;
+}
+
+.vertical .carousel_jeux {
+    /*Mode carousel vertical si la page est trop peu large*/
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(5, 20%);
+    transform: translate(-3pt, -4pt);
+}
+
+.jeux_tendance {
+    /* Permet d'avoir des dimensions idéales */
+    height: 0;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+}
+
+.vertical .jeux_tendance {
+    /*Mode carousel vertical si la page est trop peu large*/
+    height: 100%;
+    width: 0;
+    padding-bottom: 0;
+    margin: auto;
+}
+
+.jeux_tendance_content {
+    /*taille de partie cliquable jeux*/
+    border: 3pt solid;
+    /*position: relative;*/
+    cursor: pointer;
+    /* Ratio 16:9*/
+    width: 100%;
+    padding-top: 56.25%;
+    /* Transition */
+    transition: transform 0s;
+}
+
+.vertical .jeux_tendance_content {
+    height: 100%;
+    width: 100%;
+    padding-top: 0;
+}
+
+.jeux_tendance_contenu {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    line-height: 100%;
+}
+
+.jeux_car_content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.jeux_car_titre {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 5%;
+    left: 5%;
+}
+
+.jeux_car_img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+
+/*Création et positionement des divisions contenants la présentation des jeux*/
+
+.car_centre {
+    transform: scale(2);
+    text-align: center;
+}
+
+.car_droite {
+    transform: scale(1.5) translate(10%, 0);
+    opacity: 80%;
+    text-align: right;
+}
+
+.car_gauche {
+    transform: scale(1.5) translate(-10%, 0);
+    opacity: 80%;
+    text-align: left;
+}
+
+.vertical .car_droite {
+    transform: scale(1.5) translate(0, 10%);
+}
+
+.vertical .car_gauche {
+    transform: scale(1.5) translate(0, -10%);
+}
+
+.car_droite_droite {
+    transform: translate(0, 0);
+    opacity: 60%;
+    text-align: right;
+}
+
+.car_gauche_gauche {
+    transform: translate(0, 0);
+    opacity: 60%;
+    text-align: left;
+}
+
+.c_c {
+    grid-column: 3;
+    grid-row: 1;
+    z-index: 5;
+}
+
+.c_d {
+    grid-column: 4;
+    grid-row: 1;
+    z-index: 4;
+}
+
+.c_dd {
+    grid-column: 5;
+    grid-row: 1;
+    z-index: 2;
+}
+
+.c_g {
+    grid-column: 2;
+    grid-row: 1;
+    z-index: 3;
+}
+
+.c_gg {
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 1;
+}
+
+
+/* Mode carousel vertical si la page est trop peu large */
+
+.vertical .c_c {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.vertical .c_d {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.vertical .c_dd {
+    grid-column: 1;
+    grid-row: 5;
+}
+
+.vertical .c_g {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.vertical .c_gg {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+/* Conception animation au clique de la flèche droite */
+
+.anim_right_arrow {
+    transition: transform 0.25s, opacity 0.25s;
+}
+
+.car_droite_droite.anim_right_arrow {
+    transform: translate(-81%, 0) scale(1.5);
+    opacity: 80%;
+    text-align: right;
+}
+
+.car_droite.anim_right_arrow {
+    transform: translate(-97%, 0) scale(2);
+    opacity: 100%;
+    text-align: center;
+}
+
+.car_centre.anim_right_arrow {
+    transform: translate(-112%, 0) scale(1.5);
+    opacity: 80%;
+    text-align: left;
+}
+
+.car_gauche.anim_right_arrow {
+    transform: translate(-97%, 0) scale(1);
+    opacity: 60%;
+    text-align: left;
+}
+
+.car_gauche_gauche.anim_right_arrow {
+    transform: translate(391%, 0) scale(1);
+    opacity: 60%;
+    text-align: right;
+}
+
+
+/* Conception animation au clique de la flèche gauche */
+
+.anim_left_arrow {
+    transition: transform 0.25s, opacity 0.25s;
+}
+
+.car_droite_droite.anim_left_arrow {
+    transform: translate(-391%, 0) scale(1);
+    opacity: 60%;
+    text-align: left;
+}
+
+.car_droite.anim_left_arrow {
+    transform: translate(97%, 0) scale(1);
+    opacity: 60%;
+    text-align: right;
+}
+
+.car_centre.anim_left_arrow {
+    transform: translate(112%, 0) scale(1.5);
+    opacity: 80%;
+    text-align: right;
+}
+
+.car_gauche.anim_left_arrow {
+    transform: translate(97%, 0) scale(2);
+    opacity: 100%;
+    text-align: center;
+}
+
+.car_gauche_gauche.anim_left_arrow {
+    transform: translate(81%, 0) scale(1.5);
+    opacity: 80%;
+    text-align: left;
+}
+
+
+/* Conception animation au clique de la flèche bas */
+
+.vertical .anim_right_arrow {
+    transition: transform 0.25s, opacity 0.25s;
+}
+
+.vertical .car_droite_droite.anim_right_arrow {
+    transform: translate(0, -81%) scale(1.5);
+    opacity: 80%;
+}
+
+.vertical .car_droite.anim_right_arrow {
+    transform: translate(0, -97%) scale(2);
+    opacity: 100%;
+}
+
+.vertical .car_centre.anim_right_arrow {
+    transform: translate(0, -112%) scale(1.5);
+    opacity: 80%;
+}
+
+.vertical .car_gauche.anim_right_arrow {
+    transform: translate(0, -97%) scale(1);
+    opacity: 60%;
+}
+
+.vertical .car_gauche_gauche.anim_right_arrow {
+    transform: translate(0, 370%) scale(1);
+    opacity: 60%;
+}
+
+
+/* Conception animation au clique de la flèche haut */
+
+.vertical .anim_left_arrow {
+    transition: transform 0.25s, opacity 0.25s;
+}
+
+.vertical .car_droite_droite.anim_left_arrow {
+    transform: translate(0, -385%) scale(1);
+    opacity: 60%;
+}
+
+.vertical .car_droite.anim_left_arrow {
+    transform: translate(0, 97%) scale(1);
+    opacity: 60%;
+}
+
+.vertical .car_centre.anim_left_arrow {
+    transform: translate(0, 112%) scale(1.5);
+    opacity: 80%;
+}
+
+.vertical .car_gauche.anim_left_arrow {
+    transform: translate(0, 97%) scale(2);
+    opacity: 100%;
+}
+
+.vertical .car_gauche_gauche.anim_left_arrow {
+    transform: translate(0, 81%) scale(1.5);
+    opacity: 80%;
+}
+
+
+/* Contenant des flèches */
+
+.fleche_content_droite_gauche.fleche_content {
+    user-select: none;
+    position: absolute;
+    top: calc(50% - 45px / 2);
+    height: 45px;
+    width: 45px;
+}
+
+.fleche_content_droite_gauche.fleche_gauche_content {
+    left: 5%;
+}
+
+.fleche_content_droite_gauche.fleche_droite_content {
+    right: 5%;
+}
+
+.fleche_content_haut_bas.fleche_content {
+    user-select: none;
+    position: absolute;
+    right: calc(50% - 45px / 2);
+    height: 45px;
+    width: 45px;
+}
+
+.fleche_content_haut_bas.fleche_gauche_content {
+    top: 5%;
+}
+
+.fleche_content_haut_bas.fleche_droite_content {
+    bottom: 5%;
+}
+
+
+/* Conception de la flèche*/
+
+.fleche_rond {
+    /* Rond autour de la flèche */
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    width: calc(100% - 2 * 6px);
+    height: calc(100% - 2 * 6px);
+    border: solid 6px;
+    border-radius: 50%;
+}
+
+.fleche_rond.ga {
+    /* Les 2 flèches sont identiques mais celle de gauche est en mirroir */
+    transform: scale(-1);
+}
+
+.fleche_carre {
+    /* On dessine la flèche sous la forme d'un carré avec les bords verts */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border: solid 6px;
+    transform: translate(calc(-50% - 6px), 0) rotate(45deg);
+    border-color: #0A6D56;
+    transition: transform 200ms;
+}
+
+.fleche_rond:hover .fleche_carre {
+    /* Animation au hover */
+    transform: translate(calc(-50% + 6px), 0) rotate(45deg);
+}
+
+.fleche_rond:active .fleche_carre {
+    /* Animation au hover */
+    transform: translate(calc(-38% + 6px), 0) rotate(45deg);
+}
+
+.vertical .fleche_carre {
+    /* Adaptation des flèches pour la version verticale du carousel */
+    transform: translate(0, calc(-50% - 6px)) rotate(45deg);
+}
+
+.vertical .fleche_rond:hover .fleche_carre {
+    /* Animation au hover */
+    transform: translate(0, calc(-50% + 6px)) rotate(45deg);
+}
+
+.vertical .fleche_rond:active .fleche_carre {
+    /* Animation au hover */
+    transform: translate(0, calc(-38% + 6px)) rotate(45deg);
+}

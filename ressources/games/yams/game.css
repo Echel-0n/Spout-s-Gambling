@@ -1,0 +1,398 @@
+#game_yams_parent {
+    padding: 20px;
+    display: grid;
+    width: calc(100% - 2 * 20px);
+    height: calc(100% - 2 * 20px);
+    position: relative;
+}
+
+@media screen and (min-width: 850px) {
+    #game_yams_parent {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media screen and (max-width: 849px) {
+    #game_yams_parent {
+        grid-template-rows: auto auto;
+    }
+}
+
+
+/* Partie dès et tirage */
+
+#game_yams_partDes_parent {
+    border: 2px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#game_yams_partDes {
+    display: grid;
+}
+
+.game_yams_partDes_alignement_vertical #game_yams_partDes {
+    height: 100%;
+}
+
+.game_yams_partDes_alignement_horizontal #game_yams_partDes {
+    width: 100%;
+}
+
+.game_yams_des_parent {
+    margin: 10px;
+    height: max-content;
+}
+
+.game_yams_des_parent:hover {
+    cursor: pointer;
+    margin: 5px;
+    border: 5px solid #074637;
+    height: max-content;
+}
+
+
+/*Dès*/
+
+.game_yams_partDes_alignement_horizontal .game_yams_des {
+    position: relative;
+    padding-bottom: 100%;
+}
+
+.game_yams_partDes_alignement_vertical .game_yams_des {
+    position: relative;
+    padding-left: 100%;
+}
+
+.game_yams_des_val {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.sombre .game_yams_des_val {
+    background-color: white;
+}
+
+.clair .game_yams_des_val {
+    background-color: #00031F;
+}
+
+.selected_des .game_yams_des_val {
+    background-color: #0a6d56;
+}
+
+.clair .game_yams_des_val_point {
+    background-color: white;
+}
+
+.sombre .game_yams_des_val_point {
+    background-color: #00031F;
+}
+
+.game_yams_des_val_pointCentre {
+    position: absolute;
+    top: 40%;
+    bottom: 40%;
+    right: 40%;
+    left: 40%;
+    border-radius: 50%;
+}
+
+.game_yams_des_val_pointHautGauche {
+    position: absolute;
+    top: 10%;
+    bottom: 70%;
+    right: 70%;
+    left: 10%;
+    border-radius: 50%;
+}
+
+.game_yams_des_val_pointBasDroite {
+    position: absolute;
+    top: 70%;
+    bottom: 10%;
+    right: 10%;
+    left: 70%;
+    border-radius: 50%;
+}
+
+.game_yams_des_val_pointHautDroite {
+    position: absolute;
+    top: 10%;
+    bottom: 70%;
+    right: 10%;
+    left: 70%;
+    border-radius: 50%;
+}
+
+.game_yams_des_val_pointBasGauche {
+    position: absolute;
+    top: 70%;
+    bottom: 10%;
+    right: 70%;
+    left: 10%;
+    border-radius: 50%;
+}
+
+.game_yams_des_val_pointDroite {
+    position: absolute;
+    top: 40%;
+    bottom: 40%;
+    right: 10%;
+    left: 70%;
+    border-radius: 50%;
+}
+
+.game_yams_des_val_pointGauche {
+    position: absolute;
+    top: 40%;
+    bottom: 40%;
+    right: 70%;
+    left: 10%;
+    border-radius: 50%;
+}
+
+
+/* Partie Tableau des points */
+
+#game_yams_partTabl_parent {
+    border: 2px solid;
+}
+
+#game_yams_partTabl {
+    display: grid;
+    grid-template-rows: max-content auto;
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
+}
+
+#game_yams_tabl_titre {
+    text-align: center;
+    margin: 20px;
+    font-size: 40px;
+}
+
+#game_yams_tabl_score {
+    display: grid;
+    grid-template-rows: auto max-content;
+}
+
+#game_yams_tabl_grillePoints {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.game_yams_tabl_grillePoints_Col {
+    display: grid;
+    grid-template-rows: repeat(7, calc(100% / 7));
+}
+
+.game_yams_tabl_grillePoints_ligne {
+    border: 1px solid;
+    display: grid;
+    grid-template-columns: auto max-content;
+}
+
+.game_yams_tabl_grillePoints_ligne_nom {
+    margin: auto 15px;
+}
+
+.game_yams_tabl_grillePoints_ligne_score {
+    border-left: 1px solid;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sombre .canSelectScore.game_yams_tabl_grillePoints_ligne_score:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #0A6D56;
+    cursor: pointer;
+}
+
+.clair .canSelectScore.game_yams_tabl_grillePoints_ligne_score:hover {
+    background-color: #00031f17;
+    color: #0A6D56;
+    cursor: pointer;
+}
+
+.selected_score.game_yams_tabl_grillePoints_ligne_score {
+    background-color: #0A6D56;
+    cursor: default;
+    animation: 2s selected_score_sombre infinite;
+}
+
+.clair .selected_score.game_yams_tabl_grillePoints_ligne_score {
+    background-color: #0A6D56;
+    cursor: default;
+    animation: 2s selected_score_clair infinite;
+}
+
+.sombre .selected_score.game_yams_tabl_grillePoints_ligne_score {
+    background-color: #0A6D56;
+    cursor: default;
+    animation: 2s selected_score_sombre infinite;
+}
+
+@keyframes selected_score_sombre {
+    0% {
+        color: white;
+        background-color: #0A6D56;
+    }
+    50% {
+        color: #0A6D56;
+        background-color: white;
+    }
+    100% {
+        color: white;
+        background-color: #0A6D56;
+    }
+}
+
+@keyframes selected_score_clair {
+    0% {
+        color: #00031F;
+        background-color: #0A6D56;
+    }
+    50% {
+        color: #0A6D56;
+        background-color: #00031F;
+    }
+    100% {
+        color: #00031F;
+        background-color: #0A6D56;
+    }
+}
+
+.sombre .canSelectScore.selected_score.game_yams_tabl_grillePoints_ligne_score:hover {
+    background-color: #074637;
+    color: white;
+    cursor: pointer;
+}
+
+.clair .canSelectScore.selected_score.game_yams_tabl_grillePoints_ligne_score:hover {
+    background-color: #0A6D56;
+    color: black;
+    cursor: pointer;
+}
+
+.sombre .selected_score_byPHP.game_yams_tabl_grillePoints_ligne_score {
+    background-color: #0A6D56;
+    color: white;
+    cursor: not-allowed;
+}
+
+.clair .selected_score_byPHP.game_yams_tabl_grillePoints_ligne_score {
+    background-color: #0a6d56b9;
+    color: black;
+    cursor: not-allowed;
+}
+
+.sombre .selected_score_byPHP.game_yams_tabl_grillePoints_ligne_score:hover {
+    background-color: #0A6D56;
+    color: white;
+    cursor: not-allowed;
+}
+
+.clair .selected_score_byPHP.game_yams_tabl_grillePoints_ligne_score:hover {
+    background-color: #0a6d56b9;
+    color: black;
+    cursor: not-allowed;
+}
+
+#game_yams_tabl_bas {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#game_yams_tabl_totalPoints {
+    display: flex;
+    margin: 20px auto;
+    justify-content: space-between;
+    font-size: 40px;
+}
+
+#game_yams_tabl_totalPoints_inter {
+    width: 20px;
+}
+
+#game_yams_tabl_buttons {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.game_yams_tabl_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    border-right: 1px solid;
+    cursor: not-allowed;
+    color: rgba(255, 0, 0, 0.4);
+}
+
+.sombre .possibleToClick.game_yams_tabl_button {
+    cursor: pointer;
+    background-color: #0A6D56;
+    color: white;
+}
+
+.clair .possibleToClick.game_yams_tabl_button {
+    cursor: pointer;
+    background-color: #0A6D56;
+    color: #00031F;
+}
+
+.possibleToClick.game_yams_tabl_button:hover {
+    background-color: #074637;
+}
+
+
+/* Message d'erreur ou temps de chargement */
+
+#game_yams_mess_erreur {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+#game_yams_mess_erreur .parent_charg {
+    background-color: transparent;
+}
+
+#game_yams_mess_erreur .animation_chargement {
+    background-color: transparent;
+}
+
+.sombre .game_yams_mess_erreur_text {
+    padding: 10px;
+    background-color: #00031F;
+}
+
+.clair .game_yams_mess_erreur_text {
+    padding: 10px;
+    background-color: white;
+}
+
+.game_yams_mess_erreur_text_croix {
+    cursor: pointer;
+    background-color: red;
+    height: 20px;
+    width: 20px;
+    clip-path: polygon(40% 0%, 60% 0%, 60% 40%, 100% 40%, 100% 60%, 60% 60%, 60% 100%, 40% 100%, 40% 60%, 0% 60%, 0% 40%, 40% 40%);
+    transform: rotate(45deg);
+}

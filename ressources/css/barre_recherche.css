@@ -1,0 +1,99 @@
+.div_barre_rech {
+    text-align: center;
+    padding: 12.5px 0;
+    height: min-content;
+}
+
+.barre_rech {
+    display: grid;
+    grid-template-columns: 30pt 10pt auto;
+    height: 30pt;
+    margin: auto;
+    width: 70%;
+    border: 4px solid;
+    border-radius: 12pt;
+    user-select: none;
+    overflow: hidden;
+}
+
+@media (max-width: 500px) {
+    .barre_rech {
+        width: calc(100% - (12px + (35px * 1.3) + 12.5px) - 12.5px - 2*4px);
+        margin-left: calc(12px + (35px * 1.3) + 12.5px);
+        margin-right: 12.5px;
+    }
+}
+
+
+/* Conception de la loupe*/
+
+.barre_rech_loupe {
+    cursor: pointer;
+}
+
+.cercle_loupe {
+    height: 10pt;
+    width: 10pt;
+    border: 5pt solid #0A6D56;
+    border-radius: 10pt;
+    transition: transform 0.5s;
+    transform: translate(3pt, 1pt);
+}
+
+.barre_loupe {
+    width: 15pt;
+    border-top: 5pt solid #0A6D56;
+    transition: transform 0.5s;
+    transform: translate(15pt, -2.5pt) rotate(405deg);
+}
+
+.recherche_lancee .cercle_loupe {
+    transform: translate(3pt, 9pt);
+}
+
+.recherche_lancee .barre_loupe {
+    transform: translate(15pt, -13pt) rotate(-45deg);
+}
+
+.rech_barre {
+    outline: none;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    font-size: 20pt;
+    background-color: transparent;
+    margin: auto;
+    border: none;
+}
+
+.barre_rech:focus-within .cercle_loupe {
+    animation: 10s recherche_anim_cercle infinite;
+}
+
+.barre_rech:focus-within .barre_loupe {
+    animation: 10s recherche_anim_barre infinite;
+}
+
+@keyframes recherche_anim_cercle {
+    45% {
+        transform: translate(3pt, 1pt);
+    }
+    50% {
+        transform: translate(3pt, 9pt);
+    }
+    55% {
+        transform: translate(3pt, 1pt);
+    }
+}
+
+@keyframes recherche_anim_barre {
+    45% {
+        transform: translate(15pt, -2.5pt) rotate(405deg);
+    }
+    50% {
+        transform: translate(15pt, -13pt) rotate(-45deg);
+    }
+    55% {
+        transform: translate(15pt, -2.5pt) rotate(405deg);
+    }
+}

@@ -1,0 +1,374 @@
+#user_content {
+    display: grid;
+    width: 100%;
+    height: 100%;
+}
+
+#user_content.u_view {
+    grid-template-columns: auto;
+}
+
+#user_content.u_prop {
+    grid-template-columns: auto 400px;
+}
+
+
+/* Partie profil visible par tout le monde */
+
+#user_profile {
+    display: grid;
+    width: auto;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+@media (min-width:1200px) {
+    #user_profile {
+        grid-template-columns: auto auto;
+    }
+    #user_stat {
+        margin-left: 15px;
+    }
+}
+
+@media (max-width:1199px) {
+    #user_profile {
+        grid-template-rows: auto auto;
+    }
+    #user_stat {
+        margin-left: 0;
+    }
+}
+
+@media (min-width:700px) {
+    #user_info {
+        grid-template-columns: auto 1px auto;
+    }
+    .ligne_inter {
+        border-left: 1px solid;
+    }
+}
+
+@media (max-width:699px) {
+    #user_info {
+        grid-template-rows: auto 1px auto;
+    }
+    .ligne_inter {
+        border-top: 2px solid;
+    }
+    #user_amis_liste {
+        height: max-content;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+}
+
+#userInfo_et_rechUser {
+    height: 100%;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    display: grid;
+    grid-template-rows: min-content auto;
+}
+
+#user_info {
+    display: grid;
+    border: 2px solid;
+}
+
+#user_pres {
+    width: auto;
+    height: max-content;
+    display: grid;
+    grid-template-rows: repeat(4, max-content);
+    padding: 10px;
+    margin: auto 0;
+    border-radius: 5px;
+}
+
+#user_profilImg_parent {
+    margin: 0 auto;
+}
+
+#user_profilImg {
+    position: relative;
+    width: 20vmin;
+    height: 20vmin;
+}
+
+.user_certifiedImg {
+    position: absolute;
+    top: auto;
+    bottom: 3.5%;
+    right: 3.5%;
+    left: auto;
+    max-height: 25%;
+    max-width: 25%;
+}
+
+#user_profilImg_img {
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+#user_bigPseudo_parent {
+    margin: 10px auto 0 auto;
+}
+
+#user_bigPseudo {
+    user-select: text;
+    font-size: 5vmin;
+    font-family: myriad-pro, sans-serif;
+    font-weight: bold;
+}
+
+#user_nombJeton_parent {
+    display: grid;
+    grid-template-columns: max-content auto;
+    margin: 7px auto 0 auto;
+}
+
+#user_nombJetonImg {
+    width: 3.7vmin;
+    height: 3.7vmin;
+}
+
+#user_nombJetonImg_img {
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+#user_nombJeton {
+    user-select: text;
+    margin-left: 5px;
+    font-size: 3.7vmin;
+    font-family: myriad-pro, sans-serif;
+    line-height: 3.7vmin;
+}
+
+#user_addFriend_parent {
+    display: grid;
+    grid-template-columns: max-content auto;
+    margin: 25px auto 0 auto;
+}
+
+#user_addFriend {
+    width: max-content;
+    height: max-content;
+}
+
+#user_addFriend_button {
+    background-color: #0A6D56;
+    padding: 10px 13px;
+    width: auto;
+    height: calc(100% - 2 * 10px);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 3vmin;
+    font-family: myriad-pro, sans-serif;
+}
+
+#user_addFriend_button:hover {
+    background-color: #074637;
+}
+
+#user_amis_titre_parent {
+    height: max-content;
+    border-bottom: 1px solid;
+}
+
+#user_amis_titre {
+    font-size: 30px;
+    margin: auto;
+    width: max-content;
+    height: max-content;
+}
+
+.user_amis_partOfList {
+    display: flex;
+    min-width: max-content;
+    width: 100%;
+    height: 100px;
+    max-height: 100%;
+    border-bottom: 1px solid;
+}
+
+.user_amis_partOfList_photoProfil_parent {
+    position: relative;
+    margin: 5px;
+    width: max-content;
+    height: calc(100% - 2 * 5px);
+}
+
+.user_amis_partOfList_photoProfil {
+    height: 90px;
+    width: 90px;
+    max-height: 100%;
+    border-radius: 100%;
+}
+
+.user_amis_partOfList_info {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    width: 100%;
+    height: 100%;
+    text-align: left;
+}
+
+.user_amis_partOfList_pseudo>a:hover {
+    color: #0A6D56;
+}
+
+.user_amis_partOfList_jetons_parent {
+    display: flex;
+    max-height: 100%;
+    width: 100%;
+}
+
+.user_amis_partOfList_jetons_img_parent {
+    width: 25px;
+    margin: 5px;
+}
+
+.user_amis_partOfList_jetons_img {
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+}
+
+.user_amis_partOfList_button {
+    cursor: pointer;
+    font-size: 15px;
+    margin: 3px;
+    padding: 2.5px;
+    height: 20px;
+    width: max-content;
+    background-color: #0A6D56;
+    border-radius: 4px;
+    border: none;
+}
+
+.user_amis_partOfList_button:hover {
+    background-color: #074637;
+}
+
+#user_stat {
+    margin-top: 15px;
+    border: 2px solid;
+}
+
+#user_stat_titre_parent {
+    height: max-content;
+    border-bottom: 1px solid;
+}
+
+#user_stat_titre {
+    font-size: 40px;
+    margin: 5px auto;
+    width: max-content;
+    height: max-content;
+}
+
+#user_stat_contenu {
+    position: relative;
+    height: calc(100% - 56px);
+}
+
+#user_stat_indiponibles {
+    color: #0A6D56;
+    font-size: 50px;
+    width: min-content;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+
+/* Partie paramétrage profil visible par l'utilisateur uniquement */
+
+#user_settings {
+    border-left: 2px solid;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Barre de recherche */
+
+#barre_search_user {
+    overflow: visible;
+    position: relative;
+}
+
+#barre_search_user.actifSearchUser {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#affiche_searched_user {
+    display: none;
+    position: absolute;
+    border: 3px solid;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+    max-height: 200px;
+    top: 43px;
+    right: -4px;
+    left: -4px;
+    overflow: hidden;
+}
+
+#affiche_searched_user.actifSearchUser {
+    display: block;
+}
+
+#grille_searched_user {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-height: inherit;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#noResult_searched_user {
+    display: none;
+}
+
+.result_searched_user {
+    height: 30px;
+    display: flex;
+    padding: 5px;
+    border-bottom: 1px solid #80818f;
+}
+
+.sombre .result_searched_user:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #0A6D56;
+}
+
+.clair .result_searched_user:hover {
+    background-color: #00031f17;
+}
+
+.result_searched_user_img_parent {
+    height: 30px;
+    width: 30px;
+}
+
+.result_searched_user_img {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+.result_searched_user_pseudo {
+    margin-left: 10px;
+}

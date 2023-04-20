@@ -1,0 +1,139 @@
+html,
+body {
+    font-family: myriad-pro, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+.body_equiv {
+    height: 100%;
+    font-size: 20pt;
+    display: grid;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: 110px auto 75px;
+}
+
+.clair_sombre {
+    transition: all 150ms;
+    /*Si modification: modifier aussi dans: */
+    /*  barre_gauche.css > .menu_gauche > transition: all -s */
+    /*  barre_gauche.css > .button_bar1 > transition: all -s */
+}
+
+.sombre {
+    color: white;
+    background-color: #00031F;
+    border-color: white;
+}
+
+.clair {
+    color: black;
+    background-color: white;
+    border-color: black;
+}
+
+.sombre a {
+    color: white;
+    text-decoration: none;
+}
+
+.clair a {
+    color: black;
+    text-decoration: none;
+}
+
+
+/* Modification style scrollbar (ne fonctionne pas sur Explorer et Firefox)*/
+
+.scrollbar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.scrollbar::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background: #0a6d56b9;
+    border: 31px none white;
+    border-radius: 5px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #0a6d56;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:active {
+    background: #074637;
+}
+
+.sombre .scrollbar::-webkit-scrollbar-track {
+    background: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.clair .scrollbar::-webkit-scrollbar-track {
+    background: grey;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.scrollbar::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+
+/* Chargement */
+
+.parent_charg {
+    position: relative;
+    background-color: #00031F;
+    height: 25px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.animation_chargement {
+    position: absolute;
+    border: solid 5px #0A6D56;
+    background-color: #00031F;
+    height: 25px;
+    width: 25px;
+    top: calc(50% - ((25px/2) + 5px));
+    left: calc(50% - ((25px/2) + 5px));
+    animation-name: chargement;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes chargement {
+    0% {
+        border-radius: 100%;
+    }
+    33% {
+        border-radius: 0%;
+    }
+    66% {
+        border-radius: 0%;
+        transform: rotate(360deg);
+    }
+    100% {
+        border-radius: 100%;
+        transform: rotate(360deg);
+    }
+}

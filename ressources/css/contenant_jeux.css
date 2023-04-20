@@ -1,0 +1,26 @@
+.cont_jeux {
+    display: grid;
+    grid-template-rows: auto max-content;
+    border: 3pt solid;
+    margin: 0 10pt 10pt 10pt;
+    border-radius: 12pt;
+    vertical-align: middle;
+}
+
+.div_bouton_plus_de_jeux {
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+    border-top: 1pt solid;
+    padding: 10px;
+}
+
+.div_bouton_plus_de_jeux:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+    color: #0A6D56;
+}
+
+.div_bouton_plus_de_jeux:active {
+    background-color: rgba(128, 128, 128, 0.15);
+    color: #0A6D56;
+}

@@ -1,0 +1,215 @@
+#game_content {
+    display: grid;
+    width: 100%;
+    height: 100%;
+}
+
+#game_content.u_view {
+    grid-template-columns: auto;
+}
+
+#game_content.u_prop {
+    grid-template-columns: auto 400px;
+}
+
+
+/* Partie profil visible par tout le monde */
+
+#game_profile {
+    display: grid;
+    width: auto;
+    margin: 15px;
+}
+
+@media (min-width:1200px) {
+    #game_profile {
+        grid-template-columns: 50% 50%;
+    }
+    #game_stat {
+        margin-left: 15px;
+    }
+}
+
+@media (max-width:1199px) {
+    #game_profile {
+        grid-template-rows: auto auto;
+    }
+    #game_stat {
+        margin-left: 0;
+    }
+}
+
+#gameInfo_et_rechgame {
+    height: 100%;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    display: grid;
+    grid-template-rows: min-content auto;
+}
+
+#game_info {
+    display: grid;
+    border: 2px solid;
+}
+
+#game_pres {
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-template-rows: repeat(4, max-content);
+    padding: 10px;
+    margin: auto 0;
+    border-radius: 5px;
+}
+
+#game_profilImg_parent {
+    margin: 0 auto;
+}
+
+#game_profilImg {
+    position: relative;
+    width: 260px;
+    height: 260px;
+}
+
+#game_certifiedImg {
+    position: absolute;
+    top: auto;
+    bottom: 3.5%;
+    right: 3.5%;
+    left: auto;
+    max-height: 25%;
+    max-width: 25%;
+}
+
+#game_profilImg_img {
+    clip-path: circle(50% at 50% 50%);
+    width: 100%;
+    height: 100%;
+}
+
+#game_bigName_parent {
+    margin: 10px auto 0 auto;
+}
+
+#game_bigName {
+    user-select: text;
+    font-size: 75px;
+    font-family: myriad-pro, sans-serif;
+    font-weight: bold;
+}
+
+#game_nombParties_parent {
+    display: grid;
+    grid-template-columns: max-content auto;
+    margin: 7px auto 0 auto;
+}
+
+#user_nombPartiesImg {
+    width: 50px;
+    height: 50px;
+}
+
+#user_nombPartiesImg_img {
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+#game_nombParties {
+    user-select: text;
+    margin-left: 5px;
+    font-size: 50px;
+    font-family: myriad-pro, sans-serif;
+    line-height: 50px;
+}
+
+#game_play_parent {
+    display: grid;
+    grid-template-columns: max-content auto;
+    margin: 25px auto 0 auto;
+}
+
+#game_play {
+    width: max-content;
+    height: max-content;
+}
+
+#game_play_miseInput_parent {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+#game_play_miseInput {
+    width: 260px;
+    margin: 0;
+    cursor: pointer;
+    color: red;
+    background-color: red;
+}
+
+#game_play_miseInput_compteur {
+    position: absolute;
+    background-color: #0A6D56;
+    height: 20px;
+    width: 40px;
+    top: auto;
+    bottom: -20px;
+    right: auto;
+    left: 0;
+    text-align: center;
+    font-size: 15px;
+}
+
+#game_play_button {
+    background-color: #0A6D56;
+    padding: 10px 13px;
+    width: 100%;
+    height: calc(100% - 2 * 10px);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 40px;
+    font-family: myriad-pro, sans-serif;
+    text-align: center;
+}
+
+#game_play_button:hover {
+    background-color: #074637;
+}
+
+#game_stat {
+    border: 2px solid;
+}
+
+#game_stat_titre_parent {
+    height: max-content;
+    border-bottom: 1px solid;
+}
+
+#game_stat_titre {
+    font-size: 40px;
+    margin: 5px auto;
+    width: max-content;
+    height: max-content;
+}
+
+#game_stat_contenu {
+    position: relative;
+    height: calc(100% - 56px);
+}
+
+#game_stat_indiponibles {
+    color: #0A6D56;
+    font-size: 50px;
+    width: min-content;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.game_rules {
+    padding: 10px;
+}

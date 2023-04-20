@@ -1,0 +1,26 @@
+/* Texte */
+
+.part_text {
+    user-select: text;
+    margin-left: 55px;
+    transition: margin-left 1s;
+}
+
+.form_absolute_text .part_text {
+    margin-left: 0;
+}
+
+.part_text .text {
+    cursor: text;
+}
+
+@media (min-width: 850px) {
+    .bg_deployer .part_text {
+        margin-left: 5px;
+        transition: margin-left 0.5s;
+    }
+}
+
+.text a:hover {
+    color: #0a6d56;
+}

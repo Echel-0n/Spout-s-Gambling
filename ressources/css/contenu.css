@@ -1,0 +1,16 @@
+.contenu_page {
+    display: inline-grid;
+}
+
+@media (min-width: 850px) {
+    .contenu_page {
+        grid-template-columns: 0 auto;
+    }
+}
+
+@media (max-width: 849px) {
+    .contenu_page {
+        grid-template-columns: auto;
+        position: relative;
+    }
+}

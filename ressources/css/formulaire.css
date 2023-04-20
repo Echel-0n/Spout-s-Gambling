@@ -1,0 +1,519 @@
+form {
+    margin: 0;
+}
+
+.form_centre {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 150;
+}
+
+.form_section {
+    display: block;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    font-size: 17px;
+    user-select: none;
+    border: 4px solid;
+    overflow: hidden;
+    z-index: 151;
+}
+
+.form_section.erreur {
+    border-color: #d93025;
+}
+
+.form_section_content {
+    display: grid;
+    height: min-content;
+    width: 100%;
+    transition: transform 0.25s;
+}
+
+@media (max-width: 450px) {
+    .form_section {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
+
+@media (min-width: 451px) and (min-height: 400px) {
+    .form_section {
+        width: 450px;
+        height: min-content;
+    }
+}
+
+.form_page {
+    margin: auto;
+    text-align: center;
+}
+
+@media (max-width: 319px) {
+    .form_page {
+        padding: 5px;
+        width: calc(100% - 2 * 5px);
+        height: calc(100% - 2 * 5px);
+    }
+}
+
+@media (min-width: 320px) {
+    .form_page {
+        padding: 20px;
+        width: calc(100% - 2 * 20px);
+        height: calc(100% - 2 * 20px);
+    }
+}
+
+.form_pres_site {
+    display: inline-flex;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.form_logo_site {
+    height: 65px;
+    margin-right: 12.5px;
+}
+
+.form_nom_site {
+    font-size: 20pt;
+}
+
+@media (max-width: 200px) {
+    .form_logo_site {
+        margin-right: 0;
+    }
+    .form_nom_site {
+        display: none;
+    }
+}
+
+.form_nom_formulaire {
+    font-size: 28pt;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.form_encadr_input {
+    position: relative;
+    border: 1px solid;
+    border-radius: 3px;
+    margin-top: 30px;
+    cursor: text;
+    transition: border 120ms;
+}
+
+.form_input {
+    z-index: 2;
+    width: 100%;
+    font-size: 14pt;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 11px 12.5px;
+}
+
+.form_input_text_fond {
+    z-index: 1;
+    font-size: 14pt;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: auto;
+    height: min-content;
+    max-height: 25px;
+    position: absolute;
+    top: 9px;
+    margin-left: 12.5px;
+    user-select: none;
+    transition: color 120ms, transform 120ms, font-size 120ms;
+}
+
+.form_div_bouton_bas {
+    display: block;
+    position: relative;
+    height: 40px;
+    margin-top: 30px;
+    width: 100%;
+    user-select: none;
+}
+
+.form_bouton_bas {
+    border-radius: 5px;
+    height: min-content;
+    padding: 8px 20px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+}
+
+@media (min-width: 320px) {
+    .form_bouton_bas {
+        position: absolute;
+    }
+}
+
+.form_bouton_bas_gauche {
+    color: #0A6D56;
+    background-color: rgba(255, 255, 255, 0);
+    left: 0;
+    padding: 8px;
+    transition: background-color 250ms;
+}
+
+.sombre.form_bouton_bas_gauche:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.clair.form_bouton_bas_gauche:hover {
+    background-color: #00031f17;
+}
+
+.form_bouton_bas_droite {
+    background-color: #0A6D56;
+    color: white;
+    right: 0;
+    transition: background-color 250ms;
+}
+
+.form_email_con {
+    z-index: 1;
+}
+
+
+/* Erreur formulaire */
+
+.form_message_erreur {
+    display: none;
+    text-align: left;
+    width: 100%;
+    padding-left: 5pt;
+    font-size: 10pt;
+    color: #d93025;
+}
+
+#form_message_erreur_pseudo_noExist.form_message_erreur {
+    color: #2FD666;
+}
+
+.form_div_logo_erreur {
+    position: relative;
+    height: auto;
+    width: 9pt;
+    margin-right: 5pt;
+}
+
+.form_logo_erreur {
+    position: absolute;
+    top: 2pt;
+    left: 0;
+    width: 9pt;
+    height: 9pt;
+}
+
+.form_encadr_input.form_inp_focus.erreur {
+    border-color: #d93025;
+}
+
+
+/* Transition au boutton suivant */
+
+.form_bouton_bas_droite:hover {
+    background-color: #074637;
+}
+
+
+/* Case à cocher */
+
+.form_option_cocher {
+    display: flex;
+    margin-left: 5pt;
+    margin-top: 5pt;
+    width: max-content;
+}
+
+.form_text_option_cocher {
+    font-size: 12pt;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.case_a_cocher {
+    cursor: pointer;
+    margin-right: 4px;
+    width: 13px;
+    height: 13px;
+    border: 2px solid;
+    border-radius: 1px;
+    overflow: hidden;
+    background-color: transparent;
+    transition: background-color 125ms;
+    position: relative;
+    transform: translateY(1px);
+}
+
+#form_option_cocher_cgu.erreur .form_text_option_cocher {
+    color: #d93025;
+}
+
+#form_option_cocher_cgu.erreur .case_a_cocher {
+    border-color: #d93025;
+}
+
+.coche_case {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border: 1pt solid;
+    transform: translate(-15%, -100%) scale(2) rotate(45deg);
+    transition: transform 125ms;
+}
+
+.fond_case {
+    width: 100%;
+    height: 100%;
+    background-color: #0A6D56;
+    transition: clip-path 125ms;
+    clip-path: circle(0%);
+}
+
+.actif .fond_case {
+    clip-path: circle(100%);
+}
+
+
+/* Erreur mdp */
+
+.form_message_erreur.erreur {
+    display: inline-flex;
+}
+
+.form_input_text_fond.form_inp_text_hautgauche.erreur {
+    transform: translate(0, -16pt);
+    font-size: 10pt;
+    color: #d93025;
+}
+
+.form_encadr_input.erreur {
+    border-color: #d93025;
+}
+
+
+/* Flèche retour */
+
+.form_ligne_nom_formulaire {
+    position: relative;
+}
+
+@media (max-width: 250px) {
+    .form_ligne_nom_formulaire {
+        text-align: right;
+    }
+}
+
+.form_bouton_retour {
+    position: absolute;
+    top: 6pt;
+    left: 0;
+    height: 20pt;
+    width: 20pt;
+    border: 3pt solid;
+    border-radius: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+@media (max-width: 250px) {
+    .form_ligne_nom_formulaire {
+        text-align: center;
+    }
+    .form_bouton_retour {
+        position: absolute;
+        top: calc(-70% + 6pt);
+        left: calc(50% - 13pt);
+    }
+}
+
+.form_fleche_bouton_retour {
+    height: calc(100% - 6pt);
+    width: calc(100% - 6pt);
+    border: 3pt solid #0A6D56;
+    transform: translate(60%, 0) rotate(45deg);
+    transition: transform 250ms;
+}
+
+.form_bouton_retour:hover .form_fleche_bouton_retour {
+    transform: translate(40%, 0) rotate(45deg);
+}
+
+.form_bouton_retour:active .form_fleche_bouton_retour {
+    transform: translate(30%, 0) rotate(45deg);
+}
+
+
+/* Gestion du focus sur l'input d'adresse e-mail et mot de passe */
+
+.form_input_text_fond.form_inp_text_hautgauche {
+    transform: translate(0, -16pt);
+    font-size: 10pt;
+    max-height: 12pt;
+}
+
+.form_input_text_fond.form_inp_focus {
+    color: #0A6D56;
+}
+
+.form_encadr_input.form_inp_focus {
+    border-color: #0A6D56;
+}
+
+
+/* Adaptation à la hauteur avec réduction des 'margin' */
+
+@media (max-height: 399px) {
+    .form_section.form_connexion {
+        width: 100%;
+        height: 100%;
+        border: none;
+        overflow-y: visible;
+    }
+    .form_connexion .form_encadr_input {
+        margin-top: 1pt;
+    }
+    .form_connexion .form_div_bouton_bas {
+        margin-top: 1pt;
+    }
+    .form_connexion .form_ligne_nom_formulaire {
+        margin-bottom: 8px;
+    }
+    .form_connexion .form_pres_site {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-height: 524px) {
+    .form_section.form_inscription {
+        width: 100%;
+        height: 100%;
+        border: none;
+        overflow-y: visible;
+    }
+    .form_inscription .form_encadr_input {
+        margin-top: 1pt;
+    }
+    .form_inscription .form_div_bouton_bas {
+        margin-top: 1pt;
+    }
+    .form_inscription .form_ligne_nom_formulaire {
+        margin-bottom: 8px;
+    }
+    .form_inscription .form_pres_site {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-height: 699px) {
+    .form_section.form_ticket {
+        width: 100%;
+        height: 100%;
+        border: none;
+        overflow-y: visible;
+    }
+    .form_ticket .form_encadr_input {
+        margin-top: 1pt;
+    }
+    .form_ticket .form_div_bouton_bas {
+        margin-top: 1pt;
+    }
+    .form_ticket .form_ligne_nom_formulaire {
+        margin-bottom: 8px;
+    }
+    .form_ticket .form_pres_site {
+        margin-bottom: 5px;
+    }
+}
+
+
+/* Condition d'utilisation */
+
+.form_encadr_text {
+    margin-top: 8px;
+    padding-bottom: 210px;
+    cursor: default;
+}
+
+.form_absolute_text {
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    right: 5px;
+    left: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0 10px;
+    text-align: left;
+    user-select: text;
+}
+
+
+/* Message renvoyer si erreur du traitement du formulaire */
+
+#form_message_erreur_retour {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 450px) {
+    #form_message_erreur_retour {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+}
+
+
+/* Ticket */
+
+.ticket_encadr_input {
+    overflow: hidden;
+}
+
+#input_ticket {
+    display: flex;
+    margin: auto;
+    width: calc(100% - 2 * 5px);
+    padding: 5px;
+    font-size: 15pt;
+    font-family: myriad-pro, sans-serif;
+    outline: none;
+    resize: none;
+    background: none;
+    border: none;
+}
+
+.sombre #input_ticket {
+    color: white;
+}
+
+.clair #input_ticket {
+    color: black;
+}
+
+button#form_bouton_submit {
+    border: none;
+    background: transparent;
+    width: 0;
+    height: 0;
+}
